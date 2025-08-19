@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sarkari Admit Cards - Download Admit Cards</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+    body{background:#f5f6fa;color:#333;line-height:1.6;}
+
+    /* Header */
+    header{background:linear-gradient(90deg,#c62828,#6a1b9a);color:white;text-align:center;padding:20px;animation:fadeIn 1s;}
+    header h1{font-size:28px;margin-bottom:5px;}
+    header p{font-size:14px;opacity:0.9;}
+
+    /* Navbar */
+    nav{background:#0d47a1;display:flex;justify-content:center;flex-wrap:wrap;}
+    nav a{color:white;padding:12px 18px;text-decoration:none;font-weight:600;transition:0.3s;border-bottom:3px solid transparent;}
+    nav a:hover, nav a.active{background:#1565c0;border-bottom:3px solid #ffeb3b;}
+
+    /* Container */
+    .container{max-width:1200px;margin:20px auto;padding:0 15px;}
+
+    /* Search */
+    .search-bar{margin-bottom:15px;display:flex;gap:10px;}
+    .search-bar input{flex:1;padding:10px;border:1px solid #ccc;border-radius:6px;outline:none;transition:0.2s;}
+    .search-bar input:focus{border-color:#c62828;box-shadow:0 0 6px rgba(198,40,40,0.4);}
+    .search-bar button{padding:10px 16px;border:none;background:#c62828;color:white;border-radius:6px;cursor:pointer;font-weight:bold;transition:0.3s;}
+    .search-bar button:hover{background:#8e0000;}
+
+    /* Filters */
+    .filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px;}
+    .filters select{padding:8px 12px;border:1px solid #ccc;border-radius:4px;font-size:14px;}
+
+    /* Admit Card List */
+    .admit-card{background:white;padding:16px;margin-bottom:15px;border-radius:8px;box-shadow:0 3px 8px rgba(0,0,0,0.1);transition:0.3s;animation:fadeIn 0.8s;}
+    .admit-card:hover{transform:translateY(-4px);box-shadow:0 5px 12px rgba(0,0,0,0.2);}
+    .tag{display:inline-block;background:#e3f2fd;color:#0d47a1;font-size:12px;padding:4px 8px;border-radius:12px;margin-bottom:6px;font-weight:600;}
+    .admit-title{font-size:18px;font-weight:600;color:#c62828;}
+    .admit-meta{font-size:13px;color:#777;margin:6px 0;}
+    .admit-desc{font-size:14px;margin-bottom:10px;}
+    .download-btn{display:inline-block;padding:8px 14px;background:#c62828;color:white;text-decoration:none;border-radius:6px;font-size:13px;font-weight:600;transition:0.3s;}
+    .download-btn:hover{background:#8e0000;}
+
+    /* No Results */
+    .no-results{text-align:center;padding:20px;font-weight:bold;color:#c62828;display:none;}
+
+    /* Footer */
+    footer{background:#0d47a1;color:#ccc;text-align:center;padding:18px;margin-top:25px;}
+    footer a{color:#ffeb3b;text-decoration:none;margin:0 10px;font-size:14px;}
+    footer a:hover{text-decoration:underline;}
+
+    /* Animations */
+    @keyframes fadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+
+    /* Responsive */
+    @media(max-width:768px){
+      .filters{flex-direction:column;}
+      .search-bar{flex-direction:column;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Download Admit Cards</h1>
+    <p>Get the latest admit cards for upcoming government exams</p>
+  </header>
+
+  <nav>
+    <a href="home.html"><i class="fas fa-home"></i> Home</a>
+    <a href="job.html"><i class="fas fa-briefcase"></i> Jobs</a>
+    <a href="result.html"><i class="fas fa-chart-bar"></i> Results</a>
+    <a href="admit_card.html" class="active"><i class="fas fa-id-card"></i> Admit Card</a>
+    <a href="admission.html"><i class="fas fa-graduation-cap"></i> Admission</a>
+    <a href="contact_us.html"><i class="fas fa-envelope"></i> Contact</a>
+  </nav>
+
+  <div class="container">
+    <!-- Search -->
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search Admit Cards...">
+      <button onclick="filterAdmitCards()"><i class="fas fa-search"></i> Search</button>
+    </div>
+
+    <!-- Filters -->
+    <div class="filters">
+      <select id="examFilter">
+        <option value="all">All Exams</option>
+        <option value="ssc">SSC</option>
+        <option value="railway">Railway</option>
+        <option value="bank">Bank</option>
+        <option value="upsc">UPSC</option>
+      </select>
+
+      <select id="stateFilter">
+        <option value="all">All States</option>
+        <option value="delhi">Delhi</option>
+        <option value="up">Uttar Pradesh</option>
+        <option value="bihar">Bihar</option>
+        <option value="maharashtra">Maharashtra</option>
+      </select>
+    </div>
+
+    <!-- Admit Cards -->
+    <div id="admitList">
+      <div class="admit-card" data-exam="ssc" data-state="delhi">
+        <span class="tag">SSC</span>
+        <div class="admit-title">SSC CHSL 2025 Admit Card</div>
+        <div class="admit-meta"><i class="fas fa-calendar-alt"></i> Exam: June 15, 2025 | <i class="fas fa-map-marker-alt"></i> Delhi</div>
+        <p class="admit-desc">Staff Selection Commission has released admit card for CHSL Tier-I exam 2025.</p>
+        <a href="#" class="download-btn">Download</a>
+      </div>
+
+      <div class="admit-card" data-exam="railway" data-state="up">
+        <span class="tag">Railway</span>
+        <div class="admit-title">Railway RRB NTPC Admit Card 2025</div>
+        <div class="admit-meta"><i class="fas fa-calendar-alt"></i> Exam: July 10, 2025 | <i class="fas fa-map-marker-alt"></i> Uttar Pradesh</div>
+        <p class="admit-desc">Railway Recruitment Board has released NTPC exam admit card.</p>
+        <a href="#" class="download-btn">Download</a>
+      </div>
+
+      <div class="admit-card" data-exam="upsc" data-state="maharashtra">
+        <span class="tag">UPSC</span>
+        <div class="admit-title">UPSC Civil Services 2025 Admit Card</div>
+        <div class="admit-meta"><i class="fas fa-calendar-alt"></i> Exam: Aug 25, 2025 | <i class="fas fa-map-marker-alt"></i> Maharashtra</div>
+        <p class="admit-desc">Union Public Service Commission has issued admit card for CSE Preliminary exam.</p>
+        <a href="#" class="download-btn">Download</a>
+      </div>
+    </div>
+
+    <div class="no-results" id="noResults">⚠️ No matching admit cards found</div>
+  </div>
+
+  <footer>
+    <div>
+      <a href="home.html">Home</a> |
+      <a href="about_us.html">About</a> |
+      <a href="Privacy.html">Privacy</a> |
+      <a href="contact_us.html">Contact</a>
+    </div>
+    <p>&copy; 2025 Sarkari Naukari. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    const examFilter = document.getElementById("examFilter");
+    const stateFilter = document.getElementById("stateFilter");
+    const searchInput = document.getElementById("searchInput");
+    const admitCards = document.querySelectorAll(".admit-card");
+    const noResults = document.getElementById("noResults");
+
+    function filterAdmitCards(){
+      const exam = examFilter.value;
+      const state = stateFilter.value;
+      const search = searchInput.value.toLowerCase();
+
+      let visible = 0;
+      admitCards.forEach(card=>{
+        const matchesExam = (exam==="all" || card.dataset.exam===exam);
+        const matchesState = (state==="all" || card.dataset.state===state);
+        const matchesSearch = card.innerText.toLowerCase().includes(search);
+
+        if(matchesExam && matchesState && matchesSearch){
+          card.style.display="block";
+          visible++;
+        } else {
+          card.style.display="none";
+        }
+      });
+      noResults.style.display = visible===0 ? "block" : "none";
+    }
+
+    examFilter.addEventListener("change", filterAdmitCards);
+    stateFilter.addEventListener("change", filterAdmitCards);
+    searchInput.addEventListener("keyup", filterAdmitCards);
+  </script>
+</body>
+</html>

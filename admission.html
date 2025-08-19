@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sarkari Naukari - Latest Admissions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+    body{background:#f4f6f9;color:#333;line-height:1.6;}
+
+    /* Header */
+    header{background:linear-gradient(90deg,#c62828,#ad1457);color:white;text-align:center;padding:20px;}
+    header h1{font-size:28px;margin-bottom:5px;font-weight:700;}
+    header p{font-size:15px;opacity:0.95;}
+
+    /* Navbar */
+    nav{background:#0d47a1;display:flex;justify-content:center;flex-wrap:wrap;}
+    nav a{color:white;padding:14px 20px;text-decoration:none;font-weight:600;transition:0.3s;}
+    nav a:hover, nav a.active{background:#1565c0;border-radius:4px;}
+
+    /* Container */
+    .container{max-width:1200px;margin:25px auto;padding:0 15px;}
+
+    /* Filters */
+    .filters{display:flex;flex-wrap:wrap;gap:15px;margin-bottom:25px;justify-content:center;}
+    .filters select{padding:10px 15px;border:1px solid #bbb;border-radius:6px;font-size:15px;cursor:pointer;transition:0.2s;}
+    .filters select:hover{border-color:#0d47a1;}
+
+    /* Admission Cards */
+    .admission-card{background:white;padding:20px;margin-bottom:20px;border-radius:10px;box-shadow:0 3px 8px rgba(0,0,0,0.1);transition:0.3s;position:relative;}
+    .admission-card:hover{transform:translateY(-5px);box-shadow:0 6px 15px rgba(0,0,0,0.15);}
+    .admission-title{font-size:20px;font-weight:600;color:#0d47a1;margin-bottom:8px;}
+    .admission-meta{font-size:13px;color:#777;margin:6px 0;}
+    .admission-desc{font-size:14px;margin-bottom:12px;color:#444;}
+    .apply-btn{display:inline-block;padding:8px 14px;background:#c62828;color:white;text-decoration:none;border-radius:6px;font-size:14px;font-weight:600;}
+    .apply-btn:hover{background:#8e0000;}
+    .badge{position:absolute;top:15px;right:15px;background:#0d47a1;color:white;font-size:12px;font-weight:600;padding:4px 10px;border-radius:20px;}
+
+    /* Footer */
+    footer{background:#0d47a1;color:#eee;text-align:center;padding:18px;margin-top:30px;}
+    footer a{color:#ffeb3b;text-decoration:none;margin:0 10px;font-size:14px;}
+    footer a:hover{text-decoration:underline;}
+
+    /* Responsive */
+    @media(max-width:768px){
+      .filters{flex-direction:column;align-items:center;}
+      .admission-card{padding:15px;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎓 Sarkari Naukari - Latest Admissions</h1>
+    <p>Find admission notifications for universities, colleges, and professional courses</p>
+  </header>
+
+  <nav>
+    <a href="home.html"><i class="fas fa-home"></i> Home</a>
+    <a href="job.html"><i class="fas fa-briefcase"></i> Jobs</a>
+    <a href="result.html"><i class="fas fa-chart-bar"></i> Results</a>
+    <a href="admit_card.html"><i class="fas fa-id-card"></i> Admit Card</a>
+    <a href="admission.html" class="active"><i class="fas fa-graduation-cap"></i> Admission</a>
+    <a href="contact_us.html"><i class="fas fa-envelope"></i> Contact</a>
+  </nav>
+
+  <div class="container">
+    <!-- Filters -->
+    <div class="filters">
+      <select id="courseFilter">
+        <option value="all">All Courses</option>
+        <option value="engineering">Engineering</option>
+        <option value="medical">Medical</option>
+        <option value="law">Law</option>
+        <option value="management">Management</option>
+      </select>
+
+      <select id="stateFilter">
+        <option value="all">All States</option>
+        <option value="delhi">Delhi</option>
+        <option value="up">Uttar Pradesh</option>
+        <option value="bihar">Bihar</option>
+        <option value="maharashtra">Maharashtra</option>
+      </select>
+    </div>
+
+    <!-- Admission Cards -->
+    <div id="admissionList">
+      <div class="admission-card" data-course="engineering" data-state="delhi">
+        <span class="badge">Engineering</span>
+        <div class="admission-title">IIT Delhi B.Tech Admission 2025</div>
+        <div class="admission-meta"><i class="fas fa-calendar-alt"></i> Last Date: Apr 30, 2025 | <i class="fas fa-map-marker-alt"></i> Delhi</div>
+        <p class="admission-desc">Indian Institute of Technology (IIT) Delhi invites applications for B.Tech admissions for 2025 batch.</p>
+        <a href="#" class="apply-btn">Apply Now</a>
+      </div>
+
+      <div class="admission-card" data-course="medical" data-state="up">
+        <span class="badge">Medical</span>
+        <div class="admission-title">AIIMS MBBS Admission 2025</div>
+        <div class="admission-meta"><i class="fas fa-calendar-alt"></i> Last Date: May 10, 2025 | <i class="fas fa-map-marker-alt"></i> Uttar Pradesh</div>
+        <p class="admission-desc">All India Institute of Medical Sciences invites applications for MBBS admissions.</p>
+        <a href="#" class="apply-btn">Apply Now</a>
+      </div>
+
+      <div class="admission-card" data-course="law" data-state="maharashtra">
+        <span class="badge">Law</span>
+        <div class="admission-title">NLU Mumbai LLB Admission 2025</div>
+        <div class="admission-meta"><i class="fas fa-calendar-alt"></i> Last Date: May 20, 2025 | <i class="fas fa-map-marker-alt"></i> Maharashtra</div>
+        <p class="admission-desc">National Law University Mumbai opens applications for 3-year and 5-year LLB courses.</p>
+        <a href="#" class="apply-btn">Apply Now</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div>
+      <a href="home.html">Home</a> |
+      <a href="about_us.html">About</a> |
+      <a href="Privacy.html">Privacy</a> |
+      <a href="contact_us.html">Contact</a>
+    </div>
+    <p>&copy; 2025 Sarkari Naukari. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Filter functionality
+    const courseFilter = document.getElementById("courseFilter");
+    const stateFilter = document.getElementById("stateFilter");
+    const admissionCards = document.querySelectorAll(".admission-card");
+
+    function filterAdmissions(){
+      const course = courseFilter.value;
+      const state = stateFilter.value;
+
+      admissionCards.forEach(card=>{
+        const matchesCourse = (course === "all" || card.dataset.course === course);
+        const matchesState = (state === "all" || card.dataset.state === state);
+
+        card.style.display = (matchesCourse && matchesState) ? "block" : "none";
+      });
+    }
+
+    courseFilter.addEventListener("change", filterAdmissions);
+    stateFilter.addEventListener("change", filterAdmissions);
+  </script>
+</body>
+</html>

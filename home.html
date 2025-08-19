@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sarkari Naukari - Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+    body{background:#f5f6fa;color:#333;line-height:1.6;}
+
+    /* Header */
+    header{background:linear-gradient(90deg,#c62828,#6a1b9a);color:white;text-align:center;padding:20px 15px;}
+    header h1{font-size:30px;margin-bottom:5px;}
+    header p{font-size:15px;opacity:0.9;}
+
+    /* Navbar */
+    nav{background:#0d47a1;display:flex;justify-content:center;flex-wrap:wrap;}
+    nav a{
+      color:white;padding:12px 18px;text-decoration:none;font-weight:600;
+      border-bottom:3px solid transparent;transition:0.3s;
+    }
+    nav a:hover, nav a.active{
+      background:#1565c0;border-bottom:3px solid #ffeb3b;border-radius:4px;
+    }
+
+    /* Notice Bar */
+    .notice{background:#ffeb3b;padding:10px;overflow:hidden;white-space:nowrap;border-bottom:2px solid #f57f17;}
+    .notice span{display:inline-block;animation:scroll-left 15s linear infinite;font-weight:bold;color:#b71c1c;}
+    @keyframes scroll-left{from{transform:translateX(100%);}to{transform:translateX(-100%);}}
+
+    /* Layout */
+    .container{max-width:1200px;margin:20px auto;display:flex;gap:20px;flex-wrap:wrap;padding:0 15px;}
+    .main-content{flex:2;}
+    .sidebar{flex:1;min-width:260px;}
+
+    /* Sections */
+    .section{background:white;padding:15px;margin-bottom:20px;border-radius:8px;box-shadow:0 3px 8px rgba(0,0,0,0.1);transition:0.3s;}
+    .section:hover{transform:translateY(-3px);}
+    .section-title{background:#c62828;color:white;padding:10px;text-align:center;border-radius:6px;font-weight:600;margin-bottom:12px;}
+    .section ul{list-style:none;}
+    .section ul li{padding:8px 0;border-bottom:1px solid #eee;}
+    .section ul li:last-child{border-bottom:none;}
+    .section ul li a{color:#0066cc;text-decoration:none;font-size:14px;transition:0.3s;}
+    .section ul li a:hover{color:#c62828;text-decoration:underline;padding-left:5px;}
+
+    /* Sidebar Widgets */
+    .widget{background:white;padding:15px;margin-bottom:20px;border-radius:8px;box-shadow:0 3px 8px rgba(0,0,0,0.1);}
+    .widget h3{background:#6a1b9a;color:white;padding:10px;text-align:center;border-radius:6px;font-size:16px;margin-bottom:10px;}
+    .widget ul{list-style:none;}
+    .widget ul li{padding:8px 0;border-bottom:1px solid #eee;}
+    .widget ul li:last-child{border-bottom:none;}
+    .widget ul li a{color:#0066cc;text-decoration:none;font-size:14px;display:flex;align-items:center;gap:8px;transition:0.3s;}
+    .widget ul li a:hover{color:#c62828;transform:translateX(3px);}
+
+    /* Footer */
+    footer{background:#0d47a1;color:#ccc;text-align:center;padding:20px;margin-top:20px;}
+    footer a{color:#ffeb3b;text-decoration:none;margin:0 10px;font-size:14px;}
+    footer a:hover{text-decoration:underline;}
+
+    /* Responsive */
+    @media(max-width:768px){.container{flex-direction:column;}}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sarkari Naukari</h1>
+    <p>सरकारी नौकरी, परीक्षा परिणाम, प्रवेश पत्र और अधिक</p>
+  </header>
+
+  <nav>
+    <a href="home.html" class="active"><i class="fas fa-home"></i> Home</a>
+    <a href="index.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+    <a href="job.html"><i class="fas fa-briefcase"></i> Jobs</a>
+    <a href="result.html"><i class="fas fa-chart-bar"></i> Results</a>
+    <a href="admit_card.html"><i class="fas fa-id-card"></i> Admit Card</a>
+    <a href="admission.html"><i class="fas fa-graduation-cap"></i> Admission</a>
+    <a href="contact_us.html"><i class="fas fa-envelope"></i> Contact</a>
+  </nav>
+
+  <div class="notice">
+    <span>🔥 UPSC Civil Services 2025 Notification | SSC CHSL 2025 Online Form | RRB NTPC Admit Card Released | IBPS PO 2025 Registration Started 🔥</span>
+  </div>
+
+  <div class="container">
+    <!-- Main Content -->
+    <div class="main-content">
+      <div class="section">
+        <div class="section-title">Latest Jobs</div>
+        <ul>
+          <li><a href="#">UPSC Civil Services 2025 – Apply Online</a></li>
+          <li><a href="#">SSC CHSL 2025 – Registration Open</a></li>
+          <li><a href="#">IBPS PO 2025 – Notification Out</a></li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Results</div>
+        <ul>
+          <li><a href="#">SSC CGL 2024 Final Result Declared</a></li>
+          <li><a href="#">Railway NTPC 2025 Result Released</a></li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Admit Cards</div>
+        <ul>
+          <li><a href="#">RRB NTPC Admit Card 2025 – Download Now</a></li>
+          <li><a href="#">UPSC CSE Prelims 2025 Admit Card</a></li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Admissions</div>
+        <ul>
+          <li><a href="#">UP Polytechnic 2025 Admission – Apply Now</a></li>
+          <li><a href="#">Delhi University UG Admission 2025</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="widget">
+        <h3>Important Links</h3>
+        <ul>
+          <li><a href="#"><i class="fas fa-link"></i> UPSC Official Site</a></li>
+          <li><a href="#"><i class="fas fa-link"></i> SSC Official Site</a></li>
+          <li><a href="#"><i class="fas fa-link"></i> IBPS Official Site</a></li>
+          <li><a href="#"><i class="fas fa-link"></i> Railway Recruitment</a></li>
+        </ul>
+      </div>
+
+      <div class="widget">
+        <h3>Quick Navigation</h3>
+        <ul>
+          <li><a href="index.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+          <li><a href="about_us.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+          <li><a href="Privacy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+          <li><a href="term_and_condition.html"><i class="fas fa-file-contract"></i> Terms & Conditions</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    <div>
+      <a href="home.html">Home</a> |
+      <a href="about_us.html">About</a> |
+      <a href="Privacy.html">Privacy</a> |
+      <a href="contact_us.html">Contact</a>
+    </div>
+    <p>&copy; 2025 Sarkari Naukari. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

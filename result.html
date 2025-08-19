@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Results - Sarkari Naukari</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+    body{background:#f5f6fa;color:#333;line-height:1.6;}
+
+    /* Header */
+    header{
+      background:linear-gradient(90deg,#c62828,#6a1b9a);
+      color:white;text-align:center;padding:20px;
+    }
+    header h1{font-size:28px;margin-bottom:5px;}
+    header p{font-size:14px;opacity:0.9;}
+
+    /* Navbar */
+    nav{background:#0d47a1;display:flex;justify-content:center;flex-wrap:wrap;}
+    nav a{
+      color:white;padding:12px 18px;text-decoration:none;font-weight:600;
+      border-bottom:3px solid transparent;transition:0.3s;
+    }
+    nav a:hover, nav a.active{
+      background:#1565c0;border-bottom:3px solid #ffeb3b;border-radius:4px;
+    }
+
+    /* Container */
+    .container{max-width:1000px;margin:20px auto;padding:0 15px;}
+    .page-title{
+      background:#d32f2f;color:white;text-align:center;
+      padding:12px;border-radius:6px;margin-bottom:20px;
+      font-size:20px;font-weight:600;
+    }
+
+    /* Search & Filter */
+    .filter-box{
+      display:flex;justify-content:space-between;align-items:center;
+      flex-wrap:wrap;margin-bottom:15px;gap:10px;
+    }
+    .filter-box input{
+      padding:10px 14px;width:60%;max-width:320px;
+      border:1px solid #bbb;border-radius:6px;font-size:14px;
+    }
+    .filter-box select{
+      padding:10px 14px;border:1px solid #bbb;border-radius:6px;font-size:14px;
+      cursor:pointer;transition:0.3s;
+    }
+    .filter-box select:hover{border-color:#6a1b9a;box-shadow:0 0 5px rgba(106,27,154,0.4);}
+
+    /* Result Cards */
+    .result-card{
+      background:white;padding:18px;margin-bottom:18px;
+      border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,0.08);
+      transition:transform 0.2s,box-shadow 0.2s;
+    }
+    .result-card:hover{transform:translateY(-5px);box-shadow:0 6px 14px rgba(0,0,0,0.15);}
+    .result-card h2{font-size:18px;color:#0066cc;margin-bottom:8px;}
+    .result-card h2 a{text-decoration:none;color:#0066cc;}
+    .result-card h2 i{margin-right:6px;color:#c62828;}
+    .result-card .meta{font-size:13px;color:#777;margin-bottom:10px;}
+    .result-card p{font-size:14px;color:#444;}
+    .result-card .btn{
+      display:inline-block;margin-top:10px;padding:8px 14px;
+      background:#0066cc;color:white;text-decoration:none;border-radius:6px;
+      font-size:13px;font-weight:600;transition:0.3s;
+    }
+    .result-card .btn:hover{background:#004c99;transform:scale(1.05);}
+
+    /* Footer */
+    footer{background:#0d47a1;color:#ccc;text-align:center;padding:20px;margin-top:30px;}
+    footer a{color:#ffeb3b;text-decoration:none;margin:0 10px;font-size:14px;}
+    footer a:hover{text-decoration:underline;}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sarkari Naukari</h1>
+    <p>Check Latest Results of Govt Exams</p>
+  </header>
+
+  <nav>
+    <a href="home.html"><i class="fas fa-home"></i> Home</a>
+    <a href="index.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+    <a href="job.html"><i class="fas fa-briefcase"></i> Jobs</a>
+    <a href="result.html" class="active"><i class="fas fa-chart-bar"></i> Results</a>
+    <a href="admit_card.html"><i class="fas fa-id-card"></i> Admit Card</a>
+    <a href="admission.html"><i class="fas fa-graduation-cap"></i> Admission</a>
+    <a href="contact_us.html"><i class="fas fa-envelope"></i> Contact</a>
+    <a href="term_and_condition.html"><i class="fas fa-file-contract"></i> Terms</a>
+  </nav>
+
+  <div class="container">
+    <div class="page-title">Latest Exam Results</div>
+
+    <!-- Filter -->
+    <div class="filter-box">
+      <input type="text" id="searchBox" placeholder="🔍 Search by exam name...">
+      <select id="categoryFilter">
+        <option value="all">All Categories</option>
+        <option value="UPSC">UPSC</option>
+        <option value="SSC">SSC</option>
+        <option value="Railway">Railway</option>
+        <option value="Bank">Bank</option>
+      </select>
+    </div>
+
+    <!-- Results -->
+    <div id="resultsList">
+      <div class="result-card" data-category="UPSC">
+        <h2><i class="fas fa-university"></i><a href="#">UPSC Civil Services 2025 Mains Result</a></h2>
+        <div class="meta"><i class="fas fa-calendar-alt"></i> March 15, 2025 | UPSC</div>
+        <p>Union Public Service Commission has declared the Civil Services Mains 2025 results. Shortlisted candidates can download their scorecards.</p>
+        <a href="#" class="btn"><i class="fas fa-eye"></i> Check Result</a>
+      </div>
+
+      <div class="result-card" data-category="SSC">
+        <h2><i class="fas fa-users"></i><a href="#">SSC CHSL 2025 Tier-I Result</a></h2>
+        <div class="meta"><i class="fas fa-calendar-alt"></i> March 10, 2025 | SSC</div>
+        <p>Staff Selection Commission has published the CHSL 2025 Tier-I result. Qualified candidates can appear for Tier-II.</p>
+        <a href="#" class="btn"><i class="fas fa-eye"></i> Check Result</a>
+      </div>
+
+      <div class="result-card" data-category="Railway">
+        <h2><i class="fas fa-train"></i><a href="#">Railway RRB NTPC Stage 2 Result</a></h2>
+        <div class="meta"><i class="fas fa-calendar-alt"></i> March 05, 2025 | Railway</div>
+        <p>Railway Recruitment Board (RRB) has released the NTPC Stage 2 exam results. Cut-off marks and merit list available.</p>
+        <a href="#" class="btn"><i class="fas fa-eye"></i> Check Result</a>
+      </div>
+
+      <div class="result-card" data-category="Bank">
+        <h2><i class="fas fa-landmark"></i><a href="#">IBPS PO Mains 2025 Result</a></h2>
+        <div class="meta"><i class="fas fa-calendar-alt"></i> February 28, 2025 | Bank</div>
+        <p>Institute of Banking Personnel Selection (IBPS) has declared the PO Mains results for 2025 recruitment cycle.</p>
+        <a href="#" class="btn"><i class="fas fa-eye"></i> Check Result</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div>
+      <a href="home.html">Home</a> |
+      <a href="about_us.html">About</a> |
+      <a href="Privacy.html">Privacy</a> |
+      <a href="contact_us.html">Contact</a>
+    </div>
+    <p>&copy; 2025 Sarkari Naukari. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    const searchBox = document.getElementById("searchBox");
+    const categoryFilter = document.getElementById("categoryFilter");
+    const resultsList = document.getElementById("resultsList").children;
+
+    function filterResults(){
+      let searchText = searchBox.value.toLowerCase();
+      let category = categoryFilter.value;
+
+      for(let card of resultsList){
+        let title = card.querySelector("h2").innerText.toLowerCase();
+        let cardCategory = card.getAttribute("data-category");
+
+        if((title.includes(searchText)) && (category==="all" || cardCategory===category)){
+          card.style.display="block";
+        } else {
+          card.style.display="none";
+        }
+      }
+    }
+
+    searchBox.addEventListener("input", filterResults);
+    categoryFilter.addEventListener("change", filterResults);
+  </script>
+</body>
+</html>

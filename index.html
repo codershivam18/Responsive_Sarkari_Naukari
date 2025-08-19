@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sarkari Naukari Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+    body { background: #f5f6fa; color: #333; }
+
+    /* Header */
+    header {
+      background: linear-gradient(90deg, #c62828, #6a1b9a);
+      color: white; padding: 18px; text-align: center;
+    }
+    header h1 { margin-bottom: 5px; font-size: 28px; font-weight: 700; }
+    header p { font-size: 14px; opacity: 0.9; }
+
+    /* Navbar */
+    nav {
+      background: #0d47a1; display: flex; justify-content: center; flex-wrap: wrap;
+    }
+    nav a {
+      color: white; text-decoration: none; padding: 12px 18px; font-weight: 600;
+      transition: 0.3s;
+    }
+    nav a:hover, nav a.active { background: #1565c0; border-radius: 4px; }
+
+    /* Dashboard Layout */
+    .dashboard-container {
+      display: flex; gap: 20px; max-width: 1200px; margin: 20px auto; padding: 0 15px;
+      flex-wrap: wrap;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      flex: 1; min-width: 240px; background: white; padding: 15px;
+      border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .sidebar h3 { margin-bottom: 12px; font-size: 18px; color: #6a1b9a; }
+    .filter-option { margin-bottom: 10px; }
+    .filter-option input { cursor: pointer; }
+    .filter-option label { margin-left: 8px; font-size: 14px; cursor: pointer; transition: 0.2s; }
+    .filter-option label:hover { color: #0d47a1; font-weight: 600; }
+
+    /* Main Dashboard */
+    .main-dashboard { flex: 3; }
+
+    .search-bar {
+      margin-bottom: 18px; display: flex; gap: 10px;
+    }
+    .search-bar input {
+      flex: 1; padding: 10px; border-radius: 6px; border: 1px solid #ccc;
+      outline: none; transition: 0.2s;
+    }
+    .search-bar input:focus { border-color: #0d47a1; }
+    .search-bar button {
+      padding: 10px 16px; border: none; background: #c62828; color: white;
+      border-radius: 6px; cursor: pointer; font-weight: bold;
+    }
+    .search-bar button:hover { background: #8e0000; }
+
+    /* Tabs */
+    .tabs { display: flex; gap: 10px; margin-bottom: 18px; flex-wrap: wrap; }
+    .tab {
+      padding: 8px 15px; background: #eee; border-radius: 6px;
+      cursor: pointer; font-weight: 600; transition: 0.3s;
+    }
+    .tab.active { background: #c62828; color: white; }
+
+    /* Job Cards */
+    .card {
+      background: white; border-radius: 10px; padding: 16px;
+      margin-bottom: 16px; box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+    .card:hover { transform: translateY(-4px); }
+    .card h4 { margin-bottom: 8px; color: #0d47a1; }
+    .card p { font-size: 14px; margin-bottom: 10px; color: #444; }
+    .apply-btn {
+      display: inline-block; padding: 8px 14px; background: #c62828; color: white;
+      text-decoration: none; border-radius: 6px; font-size: 14px; font-weight: 600;
+    }
+    .apply-btn:hover { background: #8e0000; }
+
+    /* Footer */
+    footer {
+      background: #0d47a1; color: #ccc; text-align: center; padding: 18px; margin-top: 25px;
+    }
+    footer a { color: #ffeb3b; text-decoration: none; margin: 0 10px; font-size: 14px; }
+    footer a:hover { text-decoration: underline; }
+
+    /* Responsive */
+    @media(max-width: 768px){
+      .dashboard-container { flex-direction: column; }
+      .tabs { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sarkari Naukari Dashboard</h1>
+    <p>Latest Government Jobs, Results, Admit Cards & Admissions</p>
+  </header>
+
+  <nav>
+    <a href="home.html"><i class="fas fa-home"></i> Home</a>
+    <a href="job.html"><i class="fas fa-briefcase"></i> Jobs</a>
+    <a href="result.html"><i class="fas fa-chart-bar"></i> Results</a>
+    <a href="admit_card.html"><i class="fas fa-id-card"></i> Admit Card</a>
+    <a href="admission.html"><i class="fas fa-graduation-cap"></i> Admission</a>
+    <a href="contact_us.html"><i class="fas fa-envelope"></i> Contact</a>
+    <a href="about_us.html"><i class="fas fa-info-circle"></i> About</a>
+    <a href="Privacy.html"><i class="fas fa-user-shield"></i> Privacy</a>
+    <a href="term_and_condition.html"><i class="fas fa-file-contract"></i> Terms</a>
+  </nav>
+
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h3>Filter by Category</h3>
+      <div class="filter-option"><input type="checkbox" value="upsc"><label>UPSC</label></div>
+      <div class="filter-option"><input type="checkbox" value="ssc"><label>SSC</label></div>
+      <div class="filter-option"><input type="checkbox" value="railway"><label>Railway</label></div>
+      <div class="filter-option"><input type="checkbox" value="bank"><label>Bank Jobs</label></div>
+      <div class="filter-option"><input type="checkbox" value="state"><label>State Govt.</label></div>
+    </aside>
+
+    <!-- Main Dashboard -->
+    <section class="main-dashboard">
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search Sarkari Naukri...">
+        <button><i class="fas fa-search"></i> Search</button>
+      </div>
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <div class="tab active">Latest Jobs</div>
+        <div class="tab">Results</div>
+        <div class="tab">Admit Cards</div>
+        <div class="tab">Admissions</div>
+      </div>
+
+      <!-- Job Cards -->
+      <div class="card" data-category="upsc">
+        <h4>UPSC Civil Services 2025</h4>
+        <p>Apply online from March 20 – April 10, 2025. Prelims: June 15, 2025.</p>
+        <a href="job.html" class="apply-btn">Apply Now</a>
+      </div>
+
+      <div class="card" data-category="ssc">
+        <h4>SSC CHSL 2025</h4>
+        <p>Applications open March 18 – April 15, 2025. Exam: June 2025.</p>
+        <a href="job.html" class="apply-btn">Apply Now</a>
+      </div>
+
+      <div class="card" data-category="bank">
+        <h4>IBPS PO 2025</h4>
+        <p>Registration starts April 1 – April 25, 2025. Exam: July 2025.</p>
+        <a href="job.html" class="apply-btn">Apply Now</a>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div>
+      <a href="home.html">Home</a> |
+      <a href="about_us.html">About</a> |
+      <a href="Privacy.html">Privacy Policy</a> |
+      <a href="contact_us.html">Contact</a>
+    </div>
+    <p>&copy; 2025 Sarkari Naukari. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Tabs active state
+    const tabs = document.querySelectorAll(".tab");
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        tabs.forEach(t => t.classList.remove("active"));
+        tab.classList.add("active");
+      });
+    });
+
+    // Search filter
+    const searchInput = document.getElementById("searchInput");
+    searchInput.addEventListener("keyup", () => {
+      let filter = searchInput.value.toLowerCase();
+      document.querySelectorAll(".card").forEach(card => {
+        card.style.display = card.innerText.toLowerCase().includes(filter) ? "block" : "none";
+      });
+    });
+
+    // Sidebar filter
+    const checkboxes = document.querySelectorAll(".filter-option input");
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener("change", () => {
+        let activeFilters = [...checkboxes].filter(c => c.checked).map(c => c.value);
+        document.querySelectorAll(".card").forEach(card => {
+          if (activeFilters.length === 0 || activeFilters.includes(card.dataset.category)) {
+            card.style.display = "block";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

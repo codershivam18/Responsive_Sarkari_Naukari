@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Sarkari Naukari</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+    body{background:#f5f6fa;color:#333;line-height:1.7;}
+
+    /* Header */
+    header{
+      background:linear-gradient(90deg,#c62828,#6a1b9a);
+      color:white;text-align:center;padding:20px;
+    }
+    header h1{font-size:28px;margin-bottom:5px;}
+    header p{font-size:14px;opacity:0.9;}
+
+    /* Navbar */
+    nav{background:#0d47a1;display:flex;justify-content:center;flex-wrap:wrap;}
+    nav a{
+      color:white;padding:12px 18px;text-decoration:none;font-weight:600;
+      border-bottom:3px solid transparent;transition:0.3s;
+    }
+    nav a:hover, nav a.active{
+      background:#1565c0;border-bottom:3px solid #ffeb3b;border-radius:4px;
+    }
+
+    /* Container */
+    .container{max-width:1000px;margin:25px auto;padding:0 15px;}
+
+    .page-title{
+      background:#d32f2f;color:white;text-align:center;
+      padding:14px;border-radius:6px;margin-bottom:25px;
+      font-size:20px;font-weight:600;
+    }
+
+    /* Sections */
+    .section{
+      background:white;padding:20px;margin-bottom:20px;
+      border-radius:10px;box-shadow:0 3px 8px rgba(0,0,0,0.08);
+      transition:0.3s;
+    }
+    .section:hover{transform:translateY(-3px);}
+    .section h2{
+      color:#6a1b9a;font-size:20px;margin-bottom:12px;
+      display:flex;align-items:center;gap:8px;
+    }
+    .section h2 i{color:#d32f2f;}
+    .section p{font-size:14px;color:#444;}
+
+    /* Features Grid */
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px;}
+    .feature{
+      background:#f9f9f9;padding:15px;border-radius:8px;text-align:center;
+      box-shadow:0 2px 6px rgba(0,0,0,0.08);transition:0.3s;
+    }
+    .feature:hover{transform:translateY(-4px);}
+    .feature i{font-size:28px;color:#d32f2f;margin-bottom:8px;}
+    .feature h3{font-size:16px;margin-bottom:6px;color:#0d47a1;}
+    .feature p{font-size:13px;color:#555;}
+
+    /* CTA */
+    .cta{
+      background:linear-gradient(90deg,#6a1b9a,#283593);
+      color:white;padding:20px;border-radius:10px;
+      text-align:center;margin-top:20px;
+    }
+    .cta h2{margin-bottom:10px;font-size:20px;}
+    .cta a{
+      display:inline-block;background:#ffeb3b;color:#000;
+      padding:8px 16px;border-radius:5px;text-decoration:none;font-weight:600;
+    }
+    .cta a:hover{background:#fdd835;}
+
+    /* Footer */
+    footer{background:#0d47a1;color:#ccc;text-align:center;padding:20px;margin-top:30px;}
+    footer a{color:#ffeb3b;text-decoration:none;margin:0 10px;font-size:14px;}
+    footer a:hover{text-decoration:underline;}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>About Us</h1>
+    <p>Learn more about Sarkari Naukari and our mission</p>
+  </header>
+
+  <nav>
+    <a href="home.html"><i class="fas fa-home"></i> Home</a>
+    <a href="index.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+    <a href="job.html"><i class="fas fa-briefcase"></i> Jobs</a>
+    <a href="result.html"><i class="fas fa-chart-bar"></i> Results</a>
+    <a href="admit_card.html"><i class="fas fa-id-card"></i> Admit Card</a>
+    <a href="admission.html"><i class="fas fa-graduation-cap"></i> Admission</a>
+    <a href="contact_us.html"><i class="fas fa-envelope"></i> Contact</a>
+    <a href="about_us.html" class="active"><i class="fas fa-users"></i> About</a>
+  </nav>
+
+  <div class="container">
+    <div class="page-title">Who We Are</div>
+
+    <div class="section">
+      <h2><i class="fas fa-bullseye"></i> Our Mission</h2>
+      <p>At <b>Sarkari Naukari</b>, our mission is to make government job opportunities, exam results, admit cards, and admissions easily accessible to every aspirant. We provide updated and verified information to help students and job seekers achieve their career goals.</p>
+    </div>
+
+    <div class="section">
+      <h2><i class="fas fa-eye"></i> Our Vision</h2>
+      <p>We envision a platform where students across India can quickly find authentic and timely updates about all competitive exams, without confusion or misinformation.</p>
+    </div>
+
+    <div class="section">
+      <h2><i class="fas fa-star"></i> Why Choose Us</h2>
+      <div class="features">
+        <div class="feature">
+          <i class="fas fa-bolt"></i>
+          <h3>Fast Updates</h3>
+          <p>Instant notifications about new jobs, results, and exams.</p>
+        </div>
+        <div class="feature">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Trusted Source</h3>
+          <p>We verify information with official government sites.</p>
+        </div>
+        <div class="feature">
+          <i class="fas fa-users"></i>
+          <h3>User-Friendly</h3>
+          <p>Clean design & easy navigation for all exam categories.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta">
+      <h2>Need More Information?</h2>
+      <p>Reach out to us for queries, collaborations, or support.</p>
+      <a href="contact_us.html"><i class="fas fa-envelope"></i> Contact Us</a>
+    </div>
+  </div>
+
+  <footer>
+    <div>
+      <a href="home.html">Home</a> |
+      <a href="Privacy.html">Privacy</a> |
+      <a href="term_and_condition.html">Terms</a> |
+      <a href="contact_us.html">Contact</a>
+    </div>
+    <p>&copy; 2025 Sarkari Naukari. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
